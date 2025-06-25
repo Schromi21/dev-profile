@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karim – Entwicklerprofil</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #00bfff;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #00bfff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    canvas {
+      margin: 20px 0;
+      background-color: #2a2a2a;
+      border-radius: 8px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 10px 0;
+    }
+    a {
+      color: #87cefa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Entwicklerprofil – Karim</h1>
+
+    <div class="section">
+      <h2>Über mich</h2>
+      <p>Ich bin aktuell im dritten Jahr der Informatikmittelschule (IMS) und interessiere mich leidenschaftlich für Softwareentwicklung, Systemadministration und moderne Webtechnologien.</p>
+    </div>
+
+    <div class="section">
+      <h2>Downloads</h2>
+      <a class="btn" href="#" download>Lebenslauf herunterladen</a>
+      <a class="btn" href="#" download>Modulnotenübersicht herunterladen</a>
+    </div>
+
+    <div class="section">
+      <h2>Informatikkompetenzen</h2>
+      <canvas id="skillChart"></canvas>
+    </div>
+
+    <div class="section">
+      <h2>Arbeitsproben</h2>
+      <ul>
+        <li><a href="#" target="_blank">Projekt 1 – Platzhalter</a></li>
+        <li><a href="#" target="_blank">Projekt 2 – Platzhalter</a></li>
+        <li><a href="#" target="_blank">Projekt 3 – Platzhalter</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('skillChart').getContext('2d');
+    const skillChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: [
+          'HTML','CSS','Java','Python','PHP','C#','Rust','Lua',
+          'VS Code','PyCharm','IntelliJ',
+          'MongoDB','MySQL','Windows','Kali Linux','Office 365','Docker',
+          'Internet of Things'
+        ],
+        datasets: [{
+          label: 'Skill-Level (0–10)',
+          data: [8,7,6,4,8,3,1,2,9,5,5,5,7,9,5,8,5,6],
+          backgroundColor: '#00bfff'
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 10,
+            ticks: { color: '#f0f0f0' },
+            grid: { color: '#444' }
+          },
+          x: {
+            ticks: { color: '#f0f0f0' },
+            grid: { color: '#444' }
+          }
+        },
+        plugins: {
+          legend: {
+            labels: { color: '#f0f0f0' }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
+ 
