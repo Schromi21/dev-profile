@@ -32,6 +32,18 @@
       text-decoration: none;
       border-radius: 5px;
       margin-right: 10px;
+      margin-bottom: 10px;
+      white-space: nowrap;
+    }
+    .btn:last-child {
+      margin-right: 0;
+    }
+    .downloads-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
     }
     canvas {
       margin: 20px 0;
@@ -48,6 +60,16 @@
     a {
       color: #87cefa;
     }
+    @media (max-width: 700px) {
+      .downloads-row {
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn {
+        width: 90%;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -56,17 +78,10 @@
 
     <div class="section">
       <h2>Über mich</h2>
-      <p>Ich bin aktuell im dritten Jahr der Informatikmittelschule (IMS) und interessiere mich leidenschaftlich für Softwareentwicklung, Systemadministration und moderne Webtechnologien.</p>
-    </div>
-
-    <div class="section">
-      <h2>Downloads</h2>
-      <a class="btn" href="./Karim_CV (1).pdf" download>Lebenslauf herunterladen</a>
-      <a class="btn" href="./Modulnotenübersicht.pdf" download>Modulnotenübersicht herunterladen</a>
-      <a class="btn" href="./Sammelmappe1.pdf" download>Zeugnisse und weitere Dokumente</a>
-      <a class="btn" href="./JavaParkhaussystem.zip" download>Java Parkhaus Projekt herunterladen</a>
-      <a class="btn" href="./Buchadmin.zip" download>Buchmanagment Webapplikation herunterladen</a>
-      <a class="btn" href="./M5stackMQTT.zip" download>M5stack MQTT IOT herunterladen</a>
+      <p>
+        Ich bin aktuell im dritten Jahr der Informatikmittelschule (IMS) und interessiere mich leidenschaftlich für Softwareentwicklung, Systemadministration und moderne Webtechnologien.<br>
+        Während meiner Ausbildung konnte ich bereits vielfältige praktische Erfahrungen in verschiedenen Projekten sammeln, sowohl im Team als auch eigenständig. Besonders fasziniert mich die Entwicklung von effizienten und benutzerfreundlichen Anwendungen sowie das Lösen komplexer technischer Herausforderungen. Mein Ziel ist es, mein Wissen stetig zu erweitern und innovative Lösungen zu entwickeln, die einen echten Mehrwert bieten.
+      </p>
     </div>
 
     <div class="section">
@@ -74,7 +89,23 @@
       <canvas id="skillChart"></canvas>
     </div>
 
+    <div class="section">
+      <h2>Arbeitsbeispiele</h2>
+      <div class="downloads-row">
+        <a class="btn" href="./JavaParkhaussystem.zip" download>Java Parkhaus Projekt</a>
+        <a class="btn" href="./Buchadmin.zip" download>Buchmanagement Webapplikation</a>
+        <a class="btn" href="./M5stackMQTT.zip" download>M5stack MQTT IOT</a>
+      </div>
+    </div>
 
+    <div class="section">
+      <h2>Downloads</h2>
+      <div class="downloads-row" style="justify-content: center;">
+        <a class="btn" href="./Karim_CV (1).pdf" download>Lebenslauf herunterladen</a>
+        <a class="btn" href="./Modulnotenübersicht.pdf" download>Modulnotenübersicht herunterladen</a>
+        <a class="btn" href="./Sammelmappe1.pdf" download>Zeugnisse und weitere Dokumente</a>
+      </div>
+    </div>
 
   <script>
     const ctx = document.getElementById('skillChart').getContext('2d');
